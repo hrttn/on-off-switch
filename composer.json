@@ -1,0 +1,16 @@
+{
+    "name": "wpelk/on-off-switch",
+    "description": "WordPress plugin for an On/Off Switch.",
+    "type": "wordpress-plugin",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Hugo Rettien",
+            "email": "hugo@hugorettien.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}

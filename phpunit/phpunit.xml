@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- http://phpunit.de/manual/4.1/en/appendixes.configuration.html -->
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
-         bootstrap="./tests/bootstrap.php"
-         backupGlobals="false"
+<phpunit
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/|version|/phpunit.xsd"
+         backupGlobals="true"
+         backupStaticAttributes="false"
+         bootstrap="../vendor/autoload.php"
+         cacheTokens="false"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
->
-  <testsuites>
-    <testsuite name="AcmeTests">
-      <directory>./tests</directory>
-    </testsuite>
-  </testsuites>
-
-  <logging>
-    <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
-  </logging>
+         forceCoversAnnotation="false"
+         mapTestClassNameToCoveredClassName="false"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         stopOnRisky="false"
+         timeoutForSmallTests="1"
+         timeoutForMediumTests="10"
+         timeoutForLargeTests="60"
+         verbose="true">
+         <testsuites>
+            <testsuite name="AcmeTests">
+              <directory>./tests</directory>
+            </testsuite>
+        </testsuites>
 </phpunit>
