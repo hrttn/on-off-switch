@@ -12,5 +12,19 @@
     "require": {},
     "require-dev": {
         "phpunit/phpunit": "^6.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "WPElk\\OnOffSwitch\\Includes\\": "./includes/"
+        },
+        "exclude-from-classmap": [
+          "/tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WPElk\\OnOffSwitch\\Tests\\Unit\\": "tests/unit/",
+            "WPElk\\OnOffSwitch\\Includes\\": "./includes/"
+        }
     }
-}
+}  
