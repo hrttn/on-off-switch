@@ -1,6 +1,6 @@
 <?php
 /**
- * Init class that register all the classes in the plugin
+ * Main Switch Class
  * 
  * PHP version 7.0
  * 
@@ -16,31 +16,76 @@ namespace WPElk\OnOffSwitch\Includes\OnOffSwitch;
 
 use const WPElk\OnOffSwitch\PLUGIN_PATH;
 
-class OnOffSwitch {
-    protected $availabity;
+class OnOffSwitch
+{
+    protected $availability;
     protected $message;
     protected $color;
-
-    public function __construct()
-    {
-       $this->setAvailability(true);
-       $this->setMessage('Yup');
-       $this->setColor('#DDDDDD');
-    }
 
     public function register()
     {
         add_shortcode('on_off_switch', array($this, 'shortcode'));
+        $this->populate();
+    }
+
+    protected function populate()
+    {
+        $this->populateAvailability();
+        $this->populateMessage();
+        $this->populateColor();
+    }
+
+    protected function populateAvailability()
+    {
+        $availabity = (bool) get_option(
+            'onOffSwitch_availability',
+            false
+        );
+        $this->setAvailability($availabity);
+    }
+
+    protected function populateMessage()
+    {
+        $isAvailable = $this->getAvailability();
+        $availableMessage = (string) get_option(
+            'onOffSwitch_availableMessage',
+            'Currently Available'
+        );
+        $unavailableMessage = (string) get_option(
+            'onOffSwitch_unavailableMessage',
+            'Currently Unavailable'
+        );
+
+        $isAvailable
+            ? $this->setMessage($availableMessage)
+            : $this->setMessage($unavailableMessage);
+    }
+
+    protected function populateColor()
+    {
+        $isAvailable = $this->getAvailability();
+        $availableColor = (string) get_option(
+            'onOffSwitch_availableColor',
+            '#4CAF50'
+        );
+        $unavailableColor = (string) get_option(
+            'onOffSwitch_unavailableColor',
+            '#f44336'
+        );
+
+        $isAvailable
+            ? $this->setColor($availableColor)
+            : $this->setColor($unavailableColor);
     }
 
     public function getAvailability()
     {
-        return $this->availabity;
+        return $this->availability;
     }
 
-    public function setAvailability(bool $availabity)
+    public function setAvailability(bool $availability)
     {
-        $this->availability = $availabity;
+        $this->availability = $availability;
     }
 
     public function getMessage()
@@ -67,7 +112,7 @@ class OnOffSwitch {
     {
         ob_start();
         include PLUGIN_PATH . '/templates/switch-shortcode.php';;
-        
+    
         return ob_get_clean();
     }
 }
