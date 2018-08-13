@@ -20,6 +20,8 @@ final class Init
     {
         return array(
             OnOffSwitch\OnOffSwitch::class,
+            SettingsAPI\SettingsAPI::class,
+            OnOffSwitch\SettingsPage::class,
         );
     }
 

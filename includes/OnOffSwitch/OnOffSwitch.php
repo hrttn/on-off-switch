@@ -24,8 +24,8 @@ class OnOffSwitch
 
     public function register()
     {
-        add_shortcode('on_off_switch', array($this, 'shortcode'));
         $this->populate();
+        add_shortcode('on_off_switch', array($this, 'shortcode'));
     }
 
     protected function populate()
@@ -37,24 +37,15 @@ class OnOffSwitch
 
     protected function populateAvailability()
     {
-        $availabity = (bool) get_option(
-            'onOffSwitch_availability',
-            false
-        );
+        $availabity = (bool) get_option('onOffSwitch_availability');
         $this->setAvailability($availabity);
     }
 
     protected function populateMessage()
     {
         $isAvailable = $this->getAvailability();
-        $availableMessage = (string) get_option(
-            'onOffSwitch_availableMessage',
-            'Currently Available'
-        );
-        $unavailableMessage = (string) get_option(
-            'onOffSwitch_unavailableMessage',
-            'Currently Unavailable'
-        );
+        $availableMessage   = (string) get_option('onOffSwitch_availableMessage');
+        $unavailableMessage = (string) get_option('onOffSwitch_unavailableMessage');
 
         $isAvailable
             ? $this->setMessage($availableMessage)
@@ -64,14 +55,9 @@ class OnOffSwitch
     protected function populateColor()
     {
         $isAvailable = $this->getAvailability();
-        $availableColor = (string) get_option(
-            'onOffSwitch_availableColor',
-            '#4CAF50'
-        );
-        $unavailableColor = (string) get_option(
-            'onOffSwitch_unavailableColor',
-            '#f44336'
-        );
+
+        $availableColor   = (string) get_option('onOffSwitch_availableColor');
+        $unavailableColor = (string) get_option('onOffSwitch_unavailableColor');
 
         $isAvailable
             ? $this->setColor($availableColor)
