@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings class to store the values
+ * Communicate with the WordPress Options API
  * 
  * PHP version 7.0
  * 
@@ -12,9 +12,9 @@
  * @link       https://www.wpelk.com/on-off-switch
  */
 
-namespace WPElk\OnOffSwitch\Includes\SettingsAPI;
+namespace WPElk\OnOffSwitch\Includes\API;
 
-class SettingsAPI
+class MenuAPI
 {
 
     public function registerSettings(array $settings)

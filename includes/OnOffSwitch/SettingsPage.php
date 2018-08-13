@@ -18,11 +18,52 @@ use WPElk\OnOffSwitch\Includes\SettingsAPI\SettingsAPI;
 
 class SettingsPage
 {
+    protected $settingsAPI;
+
+    public function __construct()
+    {
+        $this->settingsAPI = new SettingsAPI();
+    }
+
     public function register()
     {
-        $config_path = PLUGIN_PATH . '/config/settings.php';
-        $config = include_once $config_path;
-        $settingsAPI = new SettingsAPI();
-        $settingsAPI->registerSettings($config);
+        add_action('admin_init', array($this, 'createSettingsPages'));   
+    }
+
+    public function createSettingsPages()
+    {
+        $this->createSubMenu();
+        $this->registerSettings();
+        $this->addSections();
+        $this->addFields();
+    }
+
+    protected function createSubMenu()
+    {
+
+    }
+
+    protected function registerSettings()
+    {
+        $configPath  = PLUGIN_PATH . 'config/settings/settings.php';
+        $config      = include_once $configPath;
+
+        $this->settingsAPI->registerSettings($config);
+    }
+
+    protected function addSections()
+    {
+        $configPath  = PLUGIN_PATH . 'config/settings/sections.php';
+        $config      = include_once $configPath;
+        
+        $this->settingsAPI->addSections($config);
+    }
+
+    protected function addFields()
+    {
+        /**$configPath  = PLUGIN_PATH . 'config/settings/fields.php';
+        $config      = include_once $configPath;
+        
+        $this->settingsAPI->addFields($config);*/
     }
 }
