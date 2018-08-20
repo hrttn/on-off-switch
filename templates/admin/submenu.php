@@ -13,7 +13,27 @@
  */
 
 namespace WPElk\OnOffSwitch\Templates\Admin;
-?>
-<h1>On/Off Switch</h1>
-<?php do_settings_sections('on-off-switch');
 
+if (isset($_GET['settings-updated'])) {
+    add_settings_error(
+        'onOffSwitch_messages',
+        'onOffSwitch_message',
+        __('Settings Saved', 'on-off-switch'),
+        'updated'
+    );
+}
+ 
+settings_errors('onOffSwitch_messages');
+?>
+
+<div class="wrap">
+    <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
+    <form action="options.php" method="post">
+    <?php
+        settings_fields('on-off-switch');
+        do_settings_sections('on-off-switch');
+        submit_button('Save Settings');
+    ?>
+    </form>
+</div>
+ 
