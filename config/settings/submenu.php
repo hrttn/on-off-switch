@@ -17,8 +17,8 @@ use const WPElk\OnOffSwitch\PLUGIN_PATH;
 return array(
     array(
         'parent_slug' => 'options-general.php',
-        'page_title'  => 'On Off Switch Options',
-        'menu_title'  => 'On Off Switch',
+        'page_title'  => 'On/Off Switch Options',
+        'menu_title'  => 'On/Off Switch',
         'capability'  => 'manage_options',
         'menu_slug'   => 'on-off-switch',
         'template'    => PLUGIN_PATH . 'templates/admin/submenu.php',

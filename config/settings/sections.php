@@ -17,7 +17,7 @@ use const WPElk\OnOffSwitch\PLUGIN_PATH;
 return array(
     array(
         'id'        => 'onOffSwitch_settings_sections',
-        'title'     => 'On Off Switch Options',
+        'title'     => 'Parameters',
         'template'  => PLUGIN_PATH . 'templates/admin/section.php',
         'page'      => 'on-off-switch',
     ),
