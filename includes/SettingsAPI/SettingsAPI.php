@@ -18,7 +18,6 @@ class SettingsAPI
 {
     protected $submenuTemplate = '';
     protected $sectionTemplate = '';
-    protected $fieldTemplate   = '';
 
 
     public function getSubmenuTemplate()
@@ -39,16 +38,6 @@ class SettingsAPI
     public function setSectionTemplate(string $template)
     {
         $this->sectionTemplate = $template;
-    }
-
-    public function getFieldTemplate()
-    {
-        return $this->fieldTemplate;
-    }
-
-    public function setFieldTemplate(string $template)
-    {
-        $this->fieldTemplate = $template;
     }
 
     public function registerSettings(array $settings)
@@ -96,14 +85,14 @@ class SettingsAPI
     {
         foreach ($settings as $setting) {
             $field = $setting['field'];
-            $this->setFieldTemplate($field['template']);
 
             add_settings_field(
                 $field['id'],
                 $field['title'],
                 array($this, 'displayFieldTemplate'),
                 $field['page'],
-                $field['section']
+                $field['section'],
+                $field['args']
             );
         }
     }
@@ -122,9 +111,10 @@ class SettingsAPI
         include $this->getSectionTemplate();
     }
 
-    public function displayFieldTemplate()
+    public function displayFieldTemplate($args)
     {
-        include $this->getFieldTemplate();
+        $template = $args['template'];
+        include $template;
     }
 
 }

@@ -25,9 +25,11 @@ return array(
         'field' => array(
             'id'       => 'onOffSwitch_availability',
             'title'    => 'Availability',
-            'template' => PLUGIN_PATH . 'templates/admin/fields/switch.php',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
+            'args' => array(
+                'template' => PLUGIN_PATH . 'templates/admin/fields/switch.php',
+            ),
         ),
     ),
     array(
@@ -40,9 +42,11 @@ return array(
         'field' => array(
             'id'       => 'onOffSwitch_availableMessage',
             'title'    => 'Message when available',
-            'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
+            'args' => array(
+                'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
+            ),
         ),
     ),
     array(
@@ -55,9 +59,11 @@ return array(
         'field' => array(
             'id'       => 'onOffSwitch_unavailableMessage',
             'title'    => 'Message when unavailable',
-            'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
+            'args' => array(
+                'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
+            ),
         ),
     ),
     array(
@@ -70,9 +76,11 @@ return array(
         'field' => array(
             'id'       => 'onOffSwitch_availableColor',
             'title'    => 'Color when available',
-            'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
+            'args' => array(
+                'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
+            ),
         ),
     ),
     array(
@@ -85,9 +93,11 @@ return array(
         'field' => array(
             'id'       => 'onOffSwitch_unavailableColor',
             'title'    => 'Color when unavailable',
-            'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
+            'args' => array(
+                'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
+            ),
         ),
     ),
 );
