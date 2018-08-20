@@ -14,6 +14,5 @@
 
 namespace WPElk\OnOffSwitch\Templates\Admin;
 ?>
-<h1>Hey</h1>
 <?php do_settings_sections('on-off-switch');
 

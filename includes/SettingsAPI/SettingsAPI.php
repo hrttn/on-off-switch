@@ -83,13 +83,12 @@ class SettingsAPI
 
     public function displaySubmenuTemplate()
     {
-        echo "H";
-        do_settings_sections('on-off-switch');
+        include $this->getSubmenuTemplate();
     }
 
     public function displaySectionTemplate()
     {
-       echo "DDD";
+        include $this->getSectionTemplate();
     }
 
 

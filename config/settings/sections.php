@@ -18,7 +18,7 @@ return array(
     array(
         'id'        => 'onOffSwitch_settings_sections',
         'title'     => 'On Off Switch Options',
-        'template'  => PLUGIN_PATH . '/templates/admin/section.php',
+        'template'  => PLUGIN_PATH . 'templates/admin/section.php',
         'page'      => 'on-off-switch',
     ),
 );

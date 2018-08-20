@@ -21,6 +21,6 @@ return array(
         'menu_title'  => 'On Off Switch',
         'capability'  => 'manage_options',
         'menu_slug'   => 'on-off-switch',
-        'template'    => PLUGIN_PATH . '/templates/admin/submenu.php',
+        'template'    => PLUGIN_PATH . 'templates/admin/submenu.php',
     ),
 );

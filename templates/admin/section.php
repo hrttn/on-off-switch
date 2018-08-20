@@ -14,4 +14,5 @@
 
 namespace WPElk\OnOffSwitch\Templates\Admin;
 ?>
-<p>Section</p>
+<h1>Hello</h1>
+<?php echo $this->getSectionTemplate();
