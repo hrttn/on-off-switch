@@ -27,9 +27,7 @@ return array(
             'title'    => 'Availability',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
-            'args' => array(
-                'template' => PLUGIN_PATH . 'templates/admin/fields/switch.php',
-            ),
+            'template' => PLUGIN_PATH . 'templates/admin/fields/switch.php',
         ),
     ),
     array(
@@ -44,9 +42,7 @@ return array(
             'title'    => 'Message when available',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
-            'args' => array(
-                'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
-            ),
+            'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
         ),
     ),
     array(
@@ -61,9 +57,7 @@ return array(
             'title'    => 'Message when unavailable',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
-            'args' => array(
-                'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
-            ),
+            'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
         ),
     ),
     array(
@@ -78,9 +72,7 @@ return array(
             'title'    => 'Color when available',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
-            'args' => array(
-                'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
-            ),
+            'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
         ),
     ),
     array(
@@ -95,9 +87,7 @@ return array(
             'title'    => 'Color when unavailable',
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
-            'args' => array(
-                'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
-            ),
+            'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
         ),
     ),
 );

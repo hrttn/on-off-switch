@@ -14,4 +14,8 @@
 
 namespace WPElk\OnOffSwitch\Templates\Admin\Fields;
 ?>
-<p>Switch</p>
+<input
+    type="checkbox" value="<?php esc_attr_e($value); ?>"
+    name="<?php esc_attr_e($name); ?>"
+    id="<?php esc_attr_e($field['id']); ?>"
+/>

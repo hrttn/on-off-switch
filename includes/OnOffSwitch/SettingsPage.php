@@ -15,6 +15,8 @@ namespace WPElk\OnOffSwitch\Includes\OnOffSwitch;
 
 use const WPElk\OnOffSwitch\PLUGIN_PATH;
 use WPElk\OnOffSwitch\Includes\SettingsAPI\SettingsAPI;
+use WPElk\OnOffSwitch\Includes\SettingsAPI\FieldsAPI;
+
 
 class SettingsPage
 {
@@ -43,15 +45,16 @@ class SettingsPage
     {
         $this->registerSettings();
         $this->addSections();
-        $this->addFields();
     }
 
     protected function registerSettings()
     {
         $configPath  = PLUGIN_PATH . 'config/settings/settings.php';
-        $config      = include $configPath;
+        $settings      = include $configPath;
 
-        $this->settingsAPI->registerSettings($config);
+        foreach ($settings as $setting) {
+            new FieldsAPI($setting);
+        }
     }
 
     protected function addSections()
@@ -60,13 +63,5 @@ class SettingsPage
         $config      = include $configPath;
         
         $this->settingsAPI->addSections($config);
-    }
-
-    protected function addFields()
-    {
-        $configPath  = PLUGIN_PATH . 'config/settings/settings.php';
-        $config      = include $configPath;
-        
-        $this->settingsAPI->addFields($config);
     }
 }

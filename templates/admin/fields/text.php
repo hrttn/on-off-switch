@@ -13,5 +13,10 @@
  */
 
 namespace WPElk\OnOffSwitch\Templates\Admin\Fields;
+
 ?>
-<p>Text</p>
+ <input
+    type="text" value="<?php esc_attr_e($value); ?>"
+    name="<?php esc_attr_e($name); ?>"
+    id="<?php esc_attr_e($field['id']); ?>"
+/>
