@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for the section page
+ * Template for the Text Field
  * 
  * PHP version 7.0
  * 
@@ -12,13 +12,6 @@
  * @link       https://www.wpelk.com/on-off-switch
  */
 
-namespace WPElk\OnOffSwitch\Templates\Admin;
+namespace WPElk\OnOffSwitch\Templates\Admin\Fields;
 ?>
-<p>
-<?php
-esc_html_e(
-    'Select the options for your On/Off Switch that will be displayed on your website.',
-    'on-off-switch'
-);
-?>
-</p>
+<p>Text</p>

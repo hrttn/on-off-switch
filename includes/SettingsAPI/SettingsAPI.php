@@ -18,6 +18,7 @@ class SettingsAPI
 {
     protected $submenuTemplate = '';
     protected $sectionTemplate = '';
+    protected $fieldTemplate   = '';
 
 
     public function getSubmenuTemplate()
@@ -40,6 +41,27 @@ class SettingsAPI
         $this->sectionTemplate = $template;
     }
 
+    public function getFieldTemplate()
+    {
+        return $this->fieldTemplate;
+    }
+
+    public function setFieldTemplate(string $template)
+    {
+        $this->fieldTemplate = $template;
+    }
+
+    public function registerSettings(array $settings)
+    {
+        foreach ($settings as $setting) {
+            register_setting(
+                $setting['option_group'],
+                $setting['option_name'],
+                $setting['args']
+            );
+        }
+    }
+
     public function addSubmenuPages(array $pages)
     {
         foreach ($pages as $page) {
@@ -52,17 +74,6 @@ class SettingsAPI
                 $page['capability'],
                 $page['menu_slug'],
                 array($this, 'displaySubmenuTemplate')
-            );
-        }
-    }
-
-    public function registerSettings(array $settings)
-    {
-        foreach ($settings as $setting) {
-            register_setting(
-                $setting['option_group'],
-                $setting['option_name'],
-                $setting['args']
             );
         }
     }
@@ -81,12 +92,28 @@ class SettingsAPI
         }
     }
 
+    public function addFields(array $settings)
+    {
+        foreach ($settings as $setting) {
+            $field = $setting['field'];
+            $this->setFieldTemplate($field['template']);
+
+            add_settings_field(
+                $field['id'],
+                $field['title'],
+                array($this, 'displayFieldTemplate'),
+                $field['page'],
+                $field['section']
+            );
+        }
+    }
+
     public function displaySubmenuTemplate()
     {
         if (!current_user_can('manage_options')) {
             return;
         }
-        
+
         include $this->getSubmenuTemplate();
     }
 
@@ -95,6 +122,9 @@ class SettingsAPI
         include $this->getSectionTemplate();
     }
 
+    public function displayFieldTemplate()
+    {
+        include $this->getFieldTemplate();
+    }
 
-    
 }

@@ -49,7 +49,7 @@ class SettingsPage
     protected function registerSettings()
     {
         $configPath  = PLUGIN_PATH . 'config/settings/settings.php';
-        $config      = include_once $configPath;
+        $config      = include $configPath;
 
         $this->settingsAPI->registerSettings($config);
     }
@@ -57,16 +57,16 @@ class SettingsPage
     protected function addSections()
     {
         $configPath  = PLUGIN_PATH . 'config/settings/sections.php';
-        $config      = include_once $configPath;
+        $config      = include $configPath;
         
         $this->settingsAPI->addSections($config);
     }
 
     protected function addFields()
     {
-        /**$configPath  = PLUGIN_PATH . 'config/settings/fields.php';
-        $config      = include_once $configPath;
+        $configPath  = PLUGIN_PATH . 'config/settings/settings.php';
+        $config      = include $configPath;
         
-        $this->settingsAPI->addFields($config);*/
+        $this->settingsAPI->addFields($config);
     }
 }
