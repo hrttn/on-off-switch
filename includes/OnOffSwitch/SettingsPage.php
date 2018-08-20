@@ -30,8 +30,8 @@ class SettingsPage
 
     public function createSubMenu()
     {
-        $configPath  = PLUGIN_PATH . 'config/settings/submenu.php';
-        $submenus      = include_once $configPath;
+        $configPath = PLUGIN_PATH . 'config/settings/submenu.php';
+        $submenus   = include_once $configPath;
 
         foreach ($submenus as $submenu) {
             new SubMenusAPI($submenu);
@@ -46,8 +46,8 @@ class SettingsPage
 
     protected function registerSettings()
     {
-        $configPath  = PLUGIN_PATH . 'config/settings/settings.php';
-        $settings      = include $configPath;
+        $configPath = PLUGIN_PATH . 'config/settings/settings.php';
+        $settings   = include $configPath;
 
         foreach ($settings as $setting) {
             new FieldsAPI($setting);
@@ -56,8 +56,8 @@ class SettingsPage
 
     protected function addSections()
     {
-        $configPath  = PLUGIN_PATH . 'config/settings/sections.php';
-        $sections      = include $configPath;
+        $configPath = PLUGIN_PATH . 'config/settings/sections.php';
+        $sections   = include $configPath;
         
         foreach ($sections as $section) {
             new SectionsAPI($section);
