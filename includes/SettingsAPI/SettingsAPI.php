@@ -40,17 +40,6 @@ class SettingsAPI
         $this->sectionTemplate = $template;
     }
 
-    public function registerSettings(array $settings)
-    {
-        foreach ($settings as $setting) {
-            register_setting(
-                $setting['option_group'],
-                $setting['option_name'],
-                $setting['args']
-            );
-        }
-    }
-
     public function addSubmenuPages(array $pages)
     {
         foreach ($pages as $page) {
@@ -81,22 +70,6 @@ class SettingsAPI
         }
     }
 
-    public function addFields(array $settings)
-    {
-        foreach ($settings as $setting) {
-            $field = $setting['field'];
-
-            add_settings_field(
-                $field['id'],
-                $field['title'],
-                array($this, 'displayFieldTemplate'),
-                $field['page'],
-                $field['section'],
-                $field['args']
-            );
-        }
-    }
-
     public function displaySubmenuTemplate()
     {
         if (!current_user_can('manage_options')) {
@@ -110,11 +83,4 @@ class SettingsAPI
     {
         include $this->getSectionTemplate();
     }
-
-    public function displayFieldTemplate($args)
-    {
-        $template = $args['template'];
-        include $template;
-    }
-
 }

@@ -16,6 +16,7 @@ namespace WPElk\OnOffSwitch\Includes\OnOffSwitch;
 use const WPElk\OnOffSwitch\PLUGIN_PATH;
 use WPElk\OnOffSwitch\Includes\SettingsAPI\SettingsAPI;
 use WPElk\OnOffSwitch\Includes\SettingsAPI\FieldsAPI;
+use WPElk\OnOffSwitch\Includes\SettingsAPI\SectionsAPI;
 
 
 class SettingsPage
@@ -60,8 +61,10 @@ class SettingsPage
     protected function addSections()
     {
         $configPath  = PLUGIN_PATH . 'config/settings/sections.php';
-        $config      = include $configPath;
+        $sections      = include $configPath;
         
-        $this->settingsAPI->addSections($config);
+        foreach ($sections as $section) {
+            new SectionsAPI($section);
+        }
     }
 }
