@@ -97,7 +97,7 @@ class OnOffSwitch
     public function shortcode()
     {
         ob_start();
-        include PLUGIN_PATH . '/templates/switch-shortcode.php';;
+        include PLUGIN_PATH . '/templates/front/switch-shortcode.php';
     
         return ob_get_clean();
     }

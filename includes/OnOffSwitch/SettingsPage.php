@@ -27,20 +27,23 @@ class SettingsPage
 
     public function register()
     {
-        add_action('admin_init', array($this, 'createSettingsPages'));   
+        add_action('admin_menu', array($this, 'createSubMenu'));
+        add_action('admin_init', array($this, 'fillSettingsPages'));
     }
 
-    public function createSettingsPages()
+    public function createSubMenu()
     {
-        $this->createSubMenu();
+        $configPath  = PLUGIN_PATH . 'config/settings/submenu.php';
+        $config      = include_once $configPath;
+
+        $this->settingsAPI->addSubmenuPages($config);
+    }
+
+    public function fillSettingsPages()
+    {
         $this->registerSettings();
         $this->addSections();
         $this->addFields();
-    }
-
-    protected function createSubMenu()
-    {
-
     }
 
     protected function registerSettings()

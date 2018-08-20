@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings Section Configuration for the plugin
+ * Settings Submenu Configuration for the plugin
  * 
  * PHP version 7.0
  * 
@@ -16,9 +16,11 @@ use const WPElk\OnOffSwitch\PLUGIN_PATH;
 
 return array(
     array(
-        'id'        => 'onOffSwitch_settings_sections',
-        'title'     => 'On Off Switch Options',
-        'template'  => PLUGIN_PATH . '/templates/admin/section.php',
-        'page'      => 'on-off-switch',
+        'parent_slug' => 'options-general.php',
+        'page_title'  => 'On Off Switch Options',
+        'menu_title'  => 'On Off Switch',
+        'capability'  => 'manage_options',
+        'menu_slug'   => 'on-off-switch',
+        'template'    => PLUGIN_PATH . '/templates/admin/submenu.php',
     ),
 );
