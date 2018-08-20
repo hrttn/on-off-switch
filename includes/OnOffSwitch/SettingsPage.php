@@ -14,19 +14,13 @@
 namespace WPElk\OnOffSwitch\Includes\OnOffSwitch;
 
 use const WPElk\OnOffSwitch\PLUGIN_PATH;
-use WPElk\OnOffSwitch\Includes\SettingsAPI\SettingsAPI;
+use WPElk\OnOffSwitch\Includes\SettingsAPI\SubMenusAPI;
 use WPElk\OnOffSwitch\Includes\SettingsAPI\FieldsAPI;
 use WPElk\OnOffSwitch\Includes\SettingsAPI\SectionsAPI;
 
 
 class SettingsPage
 {
-    protected $settingsAPI;
-
-    public function __construct()
-    {
-        $this->settingsAPI = new SettingsAPI();
-    }
 
     public function register()
     {
@@ -37,9 +31,11 @@ class SettingsPage
     public function createSubMenu()
     {
         $configPath  = PLUGIN_PATH . 'config/settings/submenu.php';
-        $config      = include_once $configPath;
+        $submenus      = include_once $configPath;
 
-        $this->settingsAPI->addSubmenuPages($config);
+        foreach ($submenus as $submenu) {
+            new SubMenusAPI($submenu);
+        }
     }
 
     public function fillSettingsPages()
