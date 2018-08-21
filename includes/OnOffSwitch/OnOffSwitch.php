@@ -25,7 +25,7 @@ class OnOffSwitch
     public function register()
     {
         $this->populate();
-        add_shortcode('on_off_switch', array($this, 'shortcode'));
+        add_shortcode('on-off-switch', array($this, 'shortcode'));
     }
 
     protected function populate()
