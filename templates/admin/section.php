@@ -13,12 +13,15 @@
  */
 
 namespace WPElk\OnOffSwitch\Templates\Admin;
+
+use const WPElk\OnOffSwitch\TEXT_DOMAIN;
+
 ?>
 <p>
 <?php
 esc_html_e(
     'Select the options for your On/Off Switch that will be displayed on your website.',
-    'on-off-switch'
+    TEXT_DOMAIN
 );
 ?>
 </p>

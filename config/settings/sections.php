@@ -13,11 +13,12 @@
  */
 namespace WPElk\OnOffSwitch\Config;
 use const WPElk\OnOffSwitch\PLUGIN_PATH;
+use const WPElk\OnOffSwitch\TEXT_DOMAIN;
 
 return array(
     array(
         'id'        => 'onOffSwitch_settings_sections',
-        'title'     => 'Parameters',
+        'title'     => __('Parameters', TEXT_DOMAIN),
         'template'  => PLUGIN_PATH . 'templates/admin/section.php',
         'page'      => 'on-off-switch',
     ),

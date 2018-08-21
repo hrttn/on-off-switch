@@ -13,6 +13,9 @@
  */
 
 namespace WPElk\OnOffSwitch\Templates\Admin;
+
+use const WPElk\OnOffSwitch\TEXT_DOMAIN;
+
  
 settings_errors('onOffSwitch_messages');
 ?>
@@ -23,7 +26,7 @@ settings_errors('onOffSwitch_messages');
     <?php
         settings_fields('on-off-switch');
         do_settings_sections('on-off-switch');
-        submit_button('Save Settings');
+        submit_button(__('Save Settings', TEXT_DOMAIN));
     ?>
     </form>
 </div>

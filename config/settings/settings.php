@@ -14,6 +14,7 @@
 namespace WPElk\OnOffSwitch\Config;
 
 use const WPElk\OnOffSwitch\PLUGIN_PATH;
+use const WPElk\OnOffSwitch\TEXT_DOMAIN;
 
 return array(
     array(
@@ -26,7 +27,7 @@ return array(
         ),
         'field' => array(
             'id'       => 'onOffSwitch_availability',
-            'title'    => 'Available?',
+            'title'    => __('Available?', TEXT_DOMAIN),
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
             'template' => PLUGIN_PATH . 'templates/admin/fields/switch.php',
@@ -37,12 +38,12 @@ return array(
         'option_name'  => 'onOffSwitch_availableMessage',
         'args'          => array(
             'type'              => 'string',
-            'default'           => 'Currently Available',
+            'default'           => __('Currently Available', TEXT_DOMAIN),
             'sanitize_callback' => 'sanitize_text_field',
         ),
         'field' => array(
             'id'       => 'onOffSwitch_availableMessage',
-            'title'    => 'Message when available',
+            'title'    => __('Message when available', TEXT_DOMAIN),
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
             'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
@@ -53,12 +54,12 @@ return array(
         'option_name'  => 'onOffSwitch_unavailableMessage',
         'args'          => array(
             'type'              => 'string',
-            'default'           => 'Currently Unavailable',
+            'default'           => __('Currently Unavailable', TEXT_DOMAIN),
             'sanitize_callback' => 'sanitize_text_field',
         ),
         'field' => array(
             'id'       => 'onOffSwitch_unavailableMessage',
-            'title'    => 'Message when unavailable',
+            'title'    => __('Message when unavailable', TEXT_DOMAIN),
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
             'template' => PLUGIN_PATH . 'templates/admin/fields/text.php',
@@ -74,7 +75,7 @@ return array(
         ),
         'field' => array(
             'id'       => 'onOffSwitch_availableColor',
-            'title'    => 'Color when available',
+            'title'    => __('Color when available', TEXT_DOMAIN),
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
             'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
@@ -90,7 +91,7 @@ return array(
         ),
         'field' => array(
             'id'       => 'onOffSwitch_unavailableColor',
-            'title'    => 'Color when unavailable',
+            'title'    => __('Color when unavailable', TEXT_DOMAIN),
             'page'     => 'on-off-switch',
             'section'  => 'onOffSwitch_settings_sections',
             'template' => PLUGIN_PATH . 'templates/admin/fields/colorPicker.php',
