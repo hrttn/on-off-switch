@@ -15,6 +15,8 @@
 namespace WPElk\OnOffSwitch\Includes\OnOffSwitch;
 
 use const WPElk\OnOffSwitch\PLUGIN_PATH;
+use const WPElk\OnOffSwitch\TEXT_DOMAIN;
+
 
 class OnOffSwitch
 {
@@ -37,7 +39,7 @@ class OnOffSwitch
 
     protected function populateAvailability()
     {
-        $availabity = (bool) get_option('onOffSwitch_availability');
+        $availabity = (bool) get_option('onOffSwitch_availability', false);
         $this->setAvailability($availabity);
     }
 
@@ -45,8 +47,14 @@ class OnOffSwitch
     {
         $isAvailable = $this->getAvailability();
 
-        $availableMessage   = (string) get_option('onOffSwitch_availableMessage');
-        $unavailableMessage = (string) get_option('onOffSwitch_unavailableMessage');
+        $availableMessage = (string) get_option(
+            'onOffSwitch_availableMessage',
+            __('Currently Available', TEXT_DOMAIN)
+        );
+        $unavailableMessage = (string) get_option(
+            'onOffSwitch_unavailableMessage',
+            __('Currently Unvailable', TEXT_DOMAIN)
+        );
 
         $isAvailable
             ? $this->setMessage($availableMessage)
@@ -57,8 +65,14 @@ class OnOffSwitch
     {
         $isAvailable = $this->getAvailability();
 
-        $availableColor   = (string) get_option('onOffSwitch_availableColor');
-        $unavailableColor = (string) get_option('onOffSwitch_unavailableColor');
+        $availableColor = (string) get_option(
+            'onOffSwitch_availableColor',
+            '#4caf50'
+        );
+        $unavailableColor = (string) get_option(
+            'onOffSwitch_unavailableColor',
+            '#f44336'
+        );
 
         $isAvailable
             ? $this->setColor($availableColor)
