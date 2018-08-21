@@ -55,5 +55,4 @@ class SectionsAPI
         
         include $template;
     }
-
 }

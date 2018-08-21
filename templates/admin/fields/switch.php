@@ -13,9 +13,12 @@
  */
 
 namespace WPElk\OnOffSwitch\Templates\Admin\Fields;
+$checked = ($value) ? 'checked' : '';
 ?>
 <input
-    type="checkbox" value="<?php esc_attr_e($value); ?>"
+    type="checkbox"
+    value="true"
     name="<?php esc_attr_e($name); ?>"
     id="<?php esc_attr_e($field['id']); ?>"
+    <?php esc_attr_e($checked); ?>
 />

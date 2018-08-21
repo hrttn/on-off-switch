@@ -16,7 +16,7 @@ use const WPElk\OnOffSwitch\PLUGIN_PATH;
 
 return array(
     array(
-        'option_group' => 'onOffSwitch',
+        'option_group' => 'on-off-switch',
         'option_name'  => 'onOffSwitch_availability',
         'args'          => array(
             'type'    => 'bool',
@@ -31,7 +31,7 @@ return array(
         ),
     ),
     array(
-        'option_group' => 'onOffSwitch',
+        'option_group' => 'on-off-switch',
         'option_name'  => 'onOffSwitch_availableMessage',
         'args'          => array(
             'type'    => 'string',
@@ -46,7 +46,7 @@ return array(
         ),
     ),
     array(
-        'option_group' => 'onOffSwitch',
+        'option_group' => 'on-off-switch',
         'option_name'  => 'onOffSwitch_unavailableMessage',
         'args'          => array(
             'type'    => 'string',
@@ -61,7 +61,7 @@ return array(
         ),
     ),
     array(
-        'option_group' => 'onOffSwitch',
+        'option_group' => 'on-off-switch',
         'option_name'  => 'onOffSwitch_availableColor',
         'args'          => array(
             'type'    => 'string',
@@ -76,7 +76,7 @@ return array(
         ),
     ),
     array(
-        'option_group' => 'onOffSwitch',
+        'option_group' => 'on-off-switch',
         'option_name'  => 'onOffSwitch_unavailableColor',
         'args'          => array(
             'type'    => 'string',
