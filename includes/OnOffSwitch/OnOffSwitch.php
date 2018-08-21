@@ -44,6 +44,7 @@ class OnOffSwitch
     protected function populateMessage()
     {
         $isAvailable = $this->getAvailability();
+
         $availableMessage   = (string) get_option('onOffSwitch_availableMessage');
         $unavailableMessage = (string) get_option('onOffSwitch_unavailableMessage');
 

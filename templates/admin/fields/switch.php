@@ -17,7 +17,7 @@ $checked = ($value) ? 'checked' : '';
 ?>
 <input
     type="checkbox"
-    value="true"
+    value="1"
     name="<?php esc_attr_e($name); ?>"
     id="<?php esc_attr_e($field['id']); ?>"
     <?php esc_attr_e($checked); ?>

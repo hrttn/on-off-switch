@@ -85,4 +85,8 @@ class FieldsAPI
         include $template;
     }
 
+    public static function sanitizeCheckbox($input)
+    {
+        return isset($input);
+    }
 }

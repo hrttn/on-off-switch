@@ -1,6 +1,7 @@
 <?php
 /**
- * 
+ * Create the admin page to display the plugin options
+ *  
  * PHP version 7.0
  * 
  * @category   WordPressPlugin
