@@ -11,7 +11,7 @@ This is especially useful for freelancers or consultant to show if they can take
 ## How to use On/Off Switch
 
 After installing the plugin, go to *Settings > On/Off Switch* to change your parameters.
-Once you are satisfied with your availability, message and colors; you can display your text with the shortcode [on-off-switch].
+Once you are satisfied with your availability, message and colors; you can display your text with the shortcode ```[on-off-switch]```.
 
 ## What are the parameters available?
 For now, you can change the text and the color depending of your availability.
