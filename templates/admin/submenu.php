@@ -13,15 +13,6 @@
  */
 
 namespace WPElk\OnOffSwitch\Templates\Admin;
-
-if (isset($_GET['settings-updated'])) {
-    add_settings_error(
-        'onOffSwitch_messages',
-        'onOffSwitch_message',
-        __('Settings Saved', 'on-off-switch'),
-        'updated'
-    );
-}
  
 settings_errors('onOffSwitch_messages');
 ?>
