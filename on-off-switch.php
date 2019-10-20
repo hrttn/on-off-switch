@@ -32,8 +32,11 @@ define(__NAMESPACE__ . '\PLUGIN_URL', plugin_dir_url(__FILE__));
 define(__NAMESPACE__ . '\PLUGIN', plugin_basename(__FILE__));
 define(__NAMESPACE__ . '\TEXT_DOMAIN', 'on-off-switch');
 
-if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
-    require_once dirname(__FILE__) . '/vendor/autoload.php';
-}
+require 'includes/Init.php';
+require 'includes/OnOffSwitch/OnOffSwitch.php';
+require 'includes/OnOffSwitch/SettingsPage.php';
+require 'includes/SettingsAPI/FieldsAPI.php';
+require 'includes/SettingsAPI/SectionsAPI.php';
+require 'includes/SettingsAPI/SubMenusAPI.php';
 
 Init::registerServices();

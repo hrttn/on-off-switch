@@ -53,7 +53,7 @@ class OnOffSwitch
         );
         $unavailableMessage = (string) get_option(
             'onOffSwitch_unavailableMessage',
-            __('Currently Unvailable', TEXT_DOMAIN)
+            __('Currently Unavailable', TEXT_DOMAIN)
         );
 
         $isAvailable
@@ -111,6 +111,9 @@ class OnOffSwitch
 
     public function shortcode()
     {
+        ob_start();
         include PLUGIN_PATH . '/templates/front/switch-shortcode.php';
+        $output = ob_get_clean();
+        return $output;
     }
 }
